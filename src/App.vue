@@ -14,9 +14,9 @@
 </template>
 
 <script>
-// import ChatWindow from 'vue-advanced-chat';
-// import 'vue-advanced-chat/dist/vue-advanced-chat.css';
-import ChatWindow from '../../vue-advanced-chat/src/ChatWindow'
+import ChatWindow from 'vue-advanced-chat'
+import 'vue-advanced-chat/dist/vue-advanced-chat.css'
+// import ChatWindow from '../../vue-advanced-chat/src/ChatWindow'
 
 export default {
 	name: 'Chat',
@@ -28,9 +28,9 @@ export default {
 	data() {
 		return {
 			currentUserId: 1234,
+			rooms: [],
 			messages: [],
-			messagesLoaded: false,
-			rooms: []
+			messagesLoaded: false
 		}
 	},
 
@@ -51,7 +51,7 @@ export default {
 	methods: {
 		fetchMessages() {
 			setTimeout(() => {
-				let messages = []
+				const messages = []
 
 				for (let i = 0; i < 30; i++) {
 					messages.push({
@@ -78,7 +78,9 @@ export default {
 				date: new Date().toDateString()
 			}
 
-			this.$set(this.messages, this.messages.length, m)
+			this.messages = [...this.messages, m]
+			// this.messages.push(m)
+			// this.$set(this.messages, this.messages.length, m)
 		}
 	}
 }
