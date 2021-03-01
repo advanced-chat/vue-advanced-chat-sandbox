@@ -70,17 +70,13 @@ export default {
 		},
 
 		sendMessage(message) {
-			const m = {
+			this.messages.push({
 				_id: this.messages.length,
 				content: message.content,
 				senderId: this.currentUserId,
 				timestamp: new Date().toString().substring(16, 21),
 				date: new Date().toDateString()
-			}
-
-			this.messages = [...this.messages, m]
-			// this.messages.push(m)
-			// this.$set(this.messages, this.messages.length, m)
+			})
 		}
 	}
 }
