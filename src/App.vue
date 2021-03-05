@@ -67,6 +67,16 @@ export default {
 				this.messages = messages
 				this.messagesLoaded = true
 			}, 500)
+
+			setTimeout(() => {
+				this.messages.push({
+					_id: this.messages.length,
+					content: 'NEW',
+					senderId: 't',
+					timestamp: new Date().toString().substring(16, 21),
+					date: new Date().toDateString()
+				})
+			}, 2000)
 		},
 
 		sendMessage(message) {
