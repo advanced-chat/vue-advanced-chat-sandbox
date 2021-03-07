@@ -49,34 +49,32 @@ export default {
 	},
 
 	methods: {
-		fetchMessages() {
+		fetchMessages({ options = {} }) {
 			setTimeout(() => {
-				const messages = []
-
-				for (let i = 0; i < 30; i++) {
-					messages.push({
-						_id: i,
-						content: 'message 1',
-						senderId: 1234,
-						username: 'John Doe',
-						date: '13 November',
-						timestamp: '10:20'
-					})
+				if (options.reset) {
+					this.messages = this.addMessages(true)
+				} else {
+					this.messages = this.addMessages().concat(this.messages)
+					this.messagesLoaded = true
 				}
+			})
+		},
 
-				this.messages = messages
-				this.messagesLoaded = true
-			}, 500)
+		addMessages(reset) {
+			const messages = []
 
-			setTimeout(() => {
-				this.messages.push({
-					_id: this.messages.length,
-					content: 'NEW',
-					senderId: 't',
-					timestamp: new Date().toString().substring(16, 21),
-					date: new Date().toDateString()
+			for (let i = 0; i < 30; i++) {
+				messages.push({
+					_id: reset ? i : this.messages.length + i,
+					content: reset ? `message ${i}` : `paginated message ${i}`,
+					senderId: 1234,
+					username: 'John Doe',
+					date: '13 November',
+					timestamp: '10:20'
 				})
-			}, 2000)
+			}
+
+			return messages
 		},
 
 		sendMessage(message) {
@@ -87,6 +85,18 @@ export default {
 				timestamp: new Date().toString().substring(16, 21),
 				date: new Date().toDateString()
 			})
+		},
+
+		addNewMessage() {
+			setTimeout(() => {
+				this.messages.push({
+					_id: this.messages.length,
+					content: 'NEW MESSAGE',
+					senderId: 4321,
+					timestamp: new Date().toString().substring(16, 21),
+					date: new Date().toDateString()
+				})
+			}, 2000)
 		}
 	}
 }
