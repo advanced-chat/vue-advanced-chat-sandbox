@@ -57,6 +57,7 @@ export default {
 					this.messages = [...this.addMessages(), ...this.messages]
 					this.messagesLoaded = true
 				}
+				this.addNewMessage()
 			})
 		},
 
