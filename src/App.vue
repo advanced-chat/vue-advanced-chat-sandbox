@@ -54,7 +54,7 @@ export default {
 				if (options.reset) {
 					this.messages = this.addMessages(true)
 				} else {
-					this.messages = this.addMessages().concat(this.messages)
+					this.messages = [...this.addMessages(), ...this.messages]
 					this.messagesLoaded = true
 				}
 			})
@@ -66,7 +66,7 @@ export default {
 			for (let i = 0; i < 30; i++) {
 				messages.push({
 					_id: reset ? i : this.messages.length + i,
-					content: reset ? `message ${i}` : `paginated message ${i}`,
+					content: `${reset ? '' : 'paginated'} message ${i + 1}`,
 					senderId: 1234,
 					username: 'John Doe',
 					date: '13 November',
