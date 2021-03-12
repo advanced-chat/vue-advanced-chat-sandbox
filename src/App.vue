@@ -64,7 +64,7 @@ export default {
 				messages.push({
 					_id: reset ? i : this.messages.length + i,
 					content: `${reset ? '' : 'paginated'} message ${i + 1}`,
-					senderId: 1234,
+					senderId: 4321,
 					username: 'John Doe',
 					date: '13 November',
 					timestamp: '10:20'
