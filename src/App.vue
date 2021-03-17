@@ -75,24 +75,30 @@ export default {
 		},
 
 		sendMessage(message) {
-			this.messages.push({
-				_id: this.messages.length,
-				content: message.content,
-				senderId: this.currentUserId,
-				timestamp: new Date().toString().substring(16, 21),
-				date: new Date().toDateString()
-			})
+			this.messages = [
+				...this.messages,
+				{
+					_id: this.messages.length,
+					content: message.content,
+					senderId: this.currentUserId,
+					timestamp: new Date().toString().substring(16, 21),
+					date: new Date().toDateString()
+				}
+			]
 		},
 
 		addNewMessage() {
 			setTimeout(() => {
-				this.messages.push({
-					_id: this.messages.length,
-					content: 'NEW MESSAGE',
-					senderId: 4321,
-					timestamp: new Date().toString().substring(16, 21),
-					date: new Date().toDateString()
-				})
+				this.messages = [
+					...this.messages,
+					{
+						_id: this.messages.length,
+						content: 'NEW MESSAGE',
+						senderId: 4321,
+						timestamp: new Date().toString().substring(16, 21),
+						date: new Date().toDateString()
+					}
+				]
 			}, 2000)
 		}
 	}
