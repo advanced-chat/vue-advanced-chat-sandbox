@@ -6,15 +6,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content>
+  <vue-advanced-chat height="calc(100vh - 60px)" [currentUserId]="currentUserId" [rooms]="rooms" [roomId]="1"
+    [roomsLoaded]="true" [messages]="messages" [messagesLoaded]="messagesLoaded"
+    [showFiles]="false" [showEmojis]="true" [textFormatting]="true" [showReactionEmojis]="true" [showFooter]="true"
+    (fetch-messages)="fetchMessages($event.detail[0])" (send-message)="sendMessage($event.detail[0])">
+  </vue-advanced-chat>
 </ion-content>

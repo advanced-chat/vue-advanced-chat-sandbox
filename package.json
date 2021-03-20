@@ -23,6 +23,8 @@
     "@ionic/angular": "^5.5.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
+    "vue": "^2.6.12",
+    "vue-advanced-chat": "https://github.com/antoine92190/vue-advanced-chat/tarball/master",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

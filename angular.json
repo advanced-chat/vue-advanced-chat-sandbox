@@ -32,7 +32,10 @@
               }
             ],
             "styles": ["src/theme/variables.scss", "src/global.scss"],
-            "scripts": []
+            "scripts": [
+              "./node_modules/vue/dist/vue.min.js",
+              "./node_modules/vue-advanced-chat/dist/vue-advanced-chat.min.js"
+            ]
           },
           "configurations": {
             "production": {
