@@ -7,7 +7,7 @@
 		"react-dom": "^17.0.1",
 		"react-scripts": "4.0.3",
 		"reactify-wc": "^4.0.0",
-		"vue-advanced-chat": "^0.8.2"
+		"vue-advanced-chat": "^0.8.3"
 	},
 	"scripts": {
 		"start": "react-scripts start",
