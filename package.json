@@ -14,7 +14,7 @@
 	"dependencies": {
 		"lamejs": "^1.2.0",
 		"vue": "^2.6.10",
-		"vue-advanced-chat": "https://github.com/antoine92190/vue-advanced-chat/tarball/master"
+		"vue-advanced-chat": "0.8.4"
 	},
 	"devDependencies": {
 		"@vue/cli-plugin-babel": "~4.5.0",
