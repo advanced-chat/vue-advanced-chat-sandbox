@@ -13,10 +13,7 @@
 	</client-only>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-
-import { Message, Messages, Rooms } from 'vue-advanced-chat'
+<script>
 import 'vue-advanced-chat/dist/vue-advanced-chat.css'
 
 const importChat = () => {
@@ -26,7 +23,7 @@ const importChat = () => {
 	return {}
 }
 
-export default Vue.extend({
+export default {
 	name: 'Chat',
 	components: importChat(),
 	data() {
@@ -42,8 +39,8 @@ export default Vue.extend({
 						{ _id: 4321, username: 'John Snow' }
 					]
 				}
-			] as Rooms,
-			messages: [] as Messages,
+			],
+			messages: [],
 			messagesLoaded: false
 		}
 	},
@@ -73,7 +70,7 @@ export default Vue.extend({
 			}
 			return messages
 		},
-		sendMessage(message: Message) {
+		sendMessage(message) {
 			this.messages = [
 				...this.messages,
 				{
@@ -100,7 +97,7 @@ export default Vue.extend({
 			}, 2000)
 		}
 	}
-})
+}
 </script>
 
 <style></style>
