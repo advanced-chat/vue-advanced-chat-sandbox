@@ -1,27 +1,34 @@
 <template>
-	<chat-window
-		height="calc(100vh - 20px)"
-		:current-user-id="currentUserId"
-		:rooms="rooms"
-		:rooms-loaded="true"
-		:messages="messages"
-		:messages-loaded="messagesLoaded"
-		@send-message="sendMessage"
-		@fetch-messages="fetchMessages"
-	/>
+	<client-only>
+		<chat-window
+			height="calc(100vh - 20px)"
+			:current-user-id="currentUserId"
+			:rooms="rooms"
+			:rooms-loaded="true"
+			:messages="messages"
+			:messages-loaded="messagesLoaded"
+			@send-message="sendMessage"
+			@fetch-messages="fetchMessages"
+		/>
+	</client-only>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 
-import ChatWindow, { Message, Messages, Rooms } from 'vue-advanced-chat'
+import { Message, Messages, Rooms } from 'vue-advanced-chat'
 import 'vue-advanced-chat/dist/vue-advanced-chat.css'
+
+const importChat = () => {
+	if (process.client) {
+		return { ChatWindow: () => import('vue-advanced-chat') }
+	}
+	return {}
+}
 
 export default Vue.extend({
 	name: 'Chat',
-	components: {
-		ChatWindow
-	},
+	components: importChat(),
 	data() {
 		return {
 			currentUserId: 1234,
