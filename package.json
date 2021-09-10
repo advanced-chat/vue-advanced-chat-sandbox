@@ -1,36 +1,32 @@
 {
-	"name": "react-chat",
-	"version": "0.1.0",
+	"name": "vue-advanced-chat-sandbox",
+	"version": "1.0.0",
 	"private": true,
-	"dependencies": {
-		"react": "^17.0.1",
-		"react-dom": "^17.0.1",
-		"react-scripts": "4.0.3",
-		"reactify-wc": "^4.0.0",
-		"vue-advanced-chat": "^0.8.3"
-	},
 	"scripts": {
-		"start": "react-scripts start",
-		"build": "react-scripts build",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject"
+		"dev": "nuxt-ts",
+		"build": "nuxt-ts build",
+		"start": "nuxt-ts start",
+		"generate": "nuxt-ts generate",
+		"lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
+		"lint": "npm run lint:js"
 	},
-	"eslintConfig": {
-		"extends": [
-			"react-app",
-			"react-app/jest"
-		]
+	"dependencies": {
+		"@nuxt/typescript-runtime": "^2.0.0",
+		"core-js": "^3.6.5",
+		"nuxt": "^2.14.6",
+		"vue-advanced-chat": "^1.1.2"
 	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
+	"devDependencies": {
+		"@nuxt/types": "^2.14.6",
+		"@nuxt/typescript-build": "^2.0.3",
+		"@nuxtjs/eslint-config": "^3.1.0",
+		"@nuxtjs/eslint-config-typescript": "^3.0.0",
+		"@nuxtjs/eslint-module": "^2.0.0",
+		"babel-eslint": "^10.1.0",
+		"eslint": "^7.10.0",
+		"eslint-config-prettier": "^6.12.0",
+		"eslint-plugin-nuxt": "^1.0.0",
+		"eslint-plugin-prettier": "^3.1.4",
+		"prettier": "^2.1.2"
 	}
 }
