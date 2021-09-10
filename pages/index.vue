@@ -14,7 +14,7 @@
 <script lang="ts">
 import Vue from 'vue'
 
-import ChatWindow from 'vue-advanced-chat'
+import ChatWindow, { Message, Messages, Rooms } from 'vue-advanced-chat'
 import 'vue-advanced-chat/dist/vue-advanced-chat.css'
 
 export default Vue.extend({
@@ -29,19 +29,19 @@ export default Vue.extend({
 				{
 					roomId: 1,
 					roomName: 'Room 1',
-					avatar: 'https://66.media.tumblr.com/avatar_c6a8eae4303e_512.pnj',
+					// avatar: 'https://66.media.tumblr.com/avatar_c6a8eae4303e_512.pnj',
 					users: [
 						{ _id: 1234, username: 'John Doe' },
 						{ _id: 4321, username: 'John Snow' }
 					]
 				}
-			],
-			messages: [],
+			] as Rooms,
+			messages: [] as Messages,
 			messagesLoaded: false
 		}
 	},
 	methods: {
-		fetchMessages({ options }) {
+		fetchMessages({ options = { reset: false } }) {
 			setTimeout(() => {
 				if (options.reset) {
 					this.messages = this.addMessages(true)
@@ -52,7 +52,7 @@ export default Vue.extend({
 				// this.addNewMessage()
 			})
 		},
-		addMessages(reset) {
+		addMessages(reset = false) {
 			const messages = []
 			for (let i = 0; i < 30; i++) {
 				messages.push({
@@ -66,7 +66,7 @@ export default Vue.extend({
 			}
 			return messages
 		},
-		sendMessage(message) {
+		sendMessage(message: Message) {
 			this.messages = [
 				...this.messages,
 				{
