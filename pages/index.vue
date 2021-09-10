@@ -1,7 +1,7 @@
 <template>
 	<client-only>
 		<chat-window
-			height="calc(100vh - 20px)"
+			height="calc(100vh - 60px)"
 			:current-user-id="currentUserId"
 			:rooms="rooms"
 			:rooms-loaded="true"
