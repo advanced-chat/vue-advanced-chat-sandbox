@@ -19,6 +19,10 @@ import 'vue-advanced-chat/dist/vue-advanced-chat.css'
 const importChat = () => {
 	if (process.client) {
 		return { ChatWindow: () => import('vue-advanced-chat') }
+		// return {
+		// 	ChatWindow: () =>
+		// 		import('../../vue-advanced-chat/dist/vue-advanced-chat.umd.js')
+		// }
 	}
 	return {}
 }
