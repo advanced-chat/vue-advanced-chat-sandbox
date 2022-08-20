@@ -14,7 +14,7 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"reset": "rm -rf node_modules && rm -rf package-lock.json && npm i"
+		"reset": "rm -rf node_modules && rm -rf package-lock.json && npm i -f"
 	},
 	"eslintConfig": {
 		"extends": [
