@@ -9,7 +9,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "reset": "rm -rf node_modules && rm -rf package-lock.json && npm i -f && npm run start"
   },
   "private": true,
   "dependencies": {
@@ -23,8 +24,7 @@
     "@ionic/angular": "^5.5.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "vue": "^2.6.12",
-    "vue-advanced-chat": "https://github.com/antoine92190/vue-advanced-chat/tarball/master",
+    "vue-advanced-chat": "https://github.com/antoine92190/vue-advanced-chat/tarball/vite",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {

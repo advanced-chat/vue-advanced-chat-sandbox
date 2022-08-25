@@ -31,11 +31,7 @@
                 "output": "./svg"
               }
             ],
-            "styles": ["src/theme/variables.scss", "src/global.scss"],
-            "scripts": [
-              "./node_modules/vue/dist/vue.min.js",
-              "./node_modules/vue-advanced-chat/dist/vue-advanced-chat.min.js"
-            ]
+            "styles": ["src/theme/variables.scss", "src/global.scss"]
           },
           "configurations": {
             "production": {
