@@ -1,10 +1,12 @@
 import React from 'react';
 import reactifyWc from 'reactify-wc';
-import 'vue-advanced-chat/dist/vue-advanced-chat.min.js';
 
 import './App.css';
 
-const ChatWindow = reactifyWc('vue-advanced-chat');
+import { register } from 'vue-advanced-chat';
+register()
+
+const VueAdvancedChat = reactifyWc('vue-advanced-chat');
 
 class App extends React.Component {
 	constructor(props) {
@@ -67,7 +69,7 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<ChatWindow
+			<VueAdvancedChat
 				ref={this.element}
 				height="calc(100vh - 20px)"
 				current-user-id={this.state.currentUserId}
