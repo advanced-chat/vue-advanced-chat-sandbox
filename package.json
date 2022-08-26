@@ -9,12 +9,11 @@
 		"s": "npm run serve",
 		"build": "vue-cli-service build",
 		"lint": "vue-cli-service lint",
-		"latest": "npm i https://github.com/antoine92190/vue-advanced-chat/tarball/master --save",
 		"reset": "rm -rf node_modules && rm -rf package-lock.json && npm i && npm run serve"
 	},
 	"dependencies": {
 		"vue": "^2.6.14",
-		"vue-advanced-chat": "https://github.com/antoine92190/vue-advanced-chat/tarball/vite"
+		"vue-advanced-chat": "2.0.0"
 	},
 	"devDependencies": {
 		"@vue/cli-plugin-babel": "^4.5.13",
