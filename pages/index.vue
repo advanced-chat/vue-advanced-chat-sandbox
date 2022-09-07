@@ -15,7 +15,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { register } from 'vue-advanced-chat/dist/vue-advanced-chat.es.js'
+import { register } from 'vue-advanced-chat'
 register()
 
 interface Message {
@@ -105,7 +105,7 @@ export default Vue.extend({
 })
 </script>
 
-<style lang="scss">
+<style>
 body {
   font-family: 'Quicksand', sans-serif;
 }
