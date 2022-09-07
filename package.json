@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
+    "s": "npm run dev -- -o",
     "build": "nuxt build",
     "start": "nuxt start",
     "reset": "rm -rf node_modules && rm -rf package-lock.json && npm i && npm run dev",
