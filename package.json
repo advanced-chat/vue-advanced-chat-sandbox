@@ -13,7 +13,7 @@
 	},
 	"dependencies": {
 		"vue": "^2.6.14",
-		"vue-advanced-chat": "2.0.0"
+		"vue-advanced-chat": "latest"
 	},
 	"devDependencies": {
 		"@vue/cli-plugin-babel": "^4.5.13",
